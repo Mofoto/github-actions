@@ -41,3 +41,17 @@ jobs:
           print
           (platform.processor())
         shell: python
+        
+  run-windows-commands:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      
+      - name: Directory PowerShell
+        run: Get-Location
+        
+      - name: Directory Bash
+        run: pwd
+        shell: bash
