@@ -40,7 +40,7 @@ jobs:
       - id: step2
         run: echo "changed-files=world" >> $GITHUB_OUTPUT
   job2:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: job1
     if: needs.job1.outputs.output1 == 'hello'
     steps:
