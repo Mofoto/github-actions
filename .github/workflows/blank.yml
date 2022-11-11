@@ -12,8 +12,8 @@ jobs:
     runs-on: windows-latest
     # Map a step output to a job output
     outputs:
-      output1: ${{ steps.step1.outputs.test }}
-      output2: ${{ steps.step2.outputs.test }}
+      output1: ${{ steps.step1.outputs.new-commits }}
+      output2: ${{ steps.step2.outputs.changed-files }}
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
@@ -33,12 +33,6 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v29.0.7
         with:
-          files: |
-            Trail.CRM/**
-            Trail.Application/**
-            Trail.Mail/**
-            Trail.Models/**
-            Trail.Common/**
           files_ignore: |
             *.yml
       - id: step1
