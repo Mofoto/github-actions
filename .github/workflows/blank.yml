@@ -36,9 +36,9 @@ jobs:
           files_ignore: |
             *.yml
       - id: step1
-        run: echo "new-commits=steps.new-commits.outputs.has-new-commits" >> $GITHUB_OUTPUT
+        run: echo "new-commits=${{steps.new-commits.outputs.has-new-commits}}" >> $GITHUB_OUTPUT
       - id: step2
-        run: echo "changed-files=steps.changed-files.outputs.any_changed" >> $GITHUB_OUTPUT
+        run: echo "changed-files=${{steps.changed-files.outputs.any_changed}}" >> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
     needs: job1
