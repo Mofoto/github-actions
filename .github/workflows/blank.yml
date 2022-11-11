@@ -36,7 +36,8 @@ jobs:
           files_ignore: |
             *.yml
       - id: step1
-        run: echo "new-commits=hello" >> $GITHUB_OUTPUT
+        run: |
+          "new-commits=hello" >> $env:GITHUB_OUTPUT
       - id: step2
         run: echo "changed-files=world" >> $GITHUB_OUTPUT
   job2:
